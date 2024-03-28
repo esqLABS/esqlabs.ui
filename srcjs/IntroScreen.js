@@ -74,7 +74,7 @@ function IntroScreen(props) {
 
   const updateCSS = (isHidden) => {
     const styleElement = document.createElement('style');
-    styleElement.innerHTML = `html { overflow: ${isHidden ? 'hidden' : 'auto'}; } .intro_screen { height: ${isHidden ? '0px !important' : '100%'}; }`;
+    styleElement.innerHTML = `html { overflow: ${isHidden ? 'hidden' : 'auto'}; } .intro_screen { height: ${isHidden ? '100%' : '0px !important'}; }`;
     document.head.appendChild(styleElement);
   };
 
