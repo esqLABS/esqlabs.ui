@@ -11,7 +11,7 @@ intro_screen <- function(img_path = "img/esqlabs_logo.png", width = NULL, height
     img_path = img_path
   )
 
-  addResourcePath('/img', system.file('/www/esqlabs.ui/main_bundle/img', package='esqlabs.ui'))
+  shiny::addResourcePath('/img', system.file('/www/esqlabs.ui/main_bundle/img', package='esqlabs.ui'))
 
   # describe a React component to send to the browser for rendering.
   component <- reactR::reactMarkup(reactR::component("IntroductionScreen", configuration))
