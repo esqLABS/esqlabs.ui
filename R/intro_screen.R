@@ -29,12 +29,17 @@ intro_screen <- function(img_path = "img/esqlabs_logo.png", width = NULL, height
 #' Called by HTMLWidgets to produce the widget's root element.
 #' @noRd
 widget_html.intro_screen <- function(id, style, class, ...) {
-  htmltools::tagList(
-    # Necessary for RStudio viewer version < 1.2
-    reactR::html_dependency_corejs(),
-    reactR::html_dependency_react(),
-    reactR::html_dependency_reacttools(),
-    htmltools::tags$div(id = id, class = class, style = style)
+  # Create the root div tag
+  root_div <- htmltools::tags$div(id = id, class = class, style = style)
+
+  # Attach the dependencies to the root div
+  htmltools::attachDependencies(
+    root_div,
+    list(
+      reactR::html_dependency_corejs(),
+      reactR::html_dependency_react(),
+      reactR::html_dependency_reacttools()
+    )
   )
 }
 

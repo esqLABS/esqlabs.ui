@@ -3,7 +3,9 @@ library(esqlabs.ui)
 library(tidyverse)
 
 ui <- fluidPage(
-  esqlabs.ui::intro_screen(),
+  suppressWarnings({
+    esqlabs.ui::intro_screen()
+  }),
   tableOutput("test")
 )
 
