@@ -38,3 +38,7 @@ rsconnect/
 .Rproj.user
 node_modules
 
+inst/.DS_Store
+inst/www/.DS_Store
+inst/www/esqlabs.ui/.DS_Store
+inst/www/esqlabs.ui/main_bundle/.DS_Store
