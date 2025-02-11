@@ -32,7 +32,7 @@ function LogoComponent(props) {
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{
-        duration: 1.5,
+        duration: 0.5,
         ease: [0, 0.71, 0.2, 1.01],
         scale: {
           type: "spring",
@@ -55,14 +55,14 @@ function Slider() {
         initial={{ scaleY: 0 }}
         animate={{ scaleY: 0 }}
         exit={{ scaleY: 1 }}
-        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
       />
       <motion.div
         className="slide-out"
         initial={{ scaleY: 1 }}
         animate={{ scaleY: 0 }}
         exit={{ scaleY: 0 }}
-        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
       />
     </>
   );
@@ -83,7 +83,7 @@ function IntroScreen(props) {
       setCurrentComponentIndex(prevIndex =>
         prevIndex < components.length - 1 ? prevIndex + 1 : prevIndex
       );
-    }, 3500);
+    }, 1000);
 
     currentComponentIndex === 2 ? updateCSS(false) : updateCSS(true);
 
@@ -92,7 +92,7 @@ function IntroScreen(props) {
 
   return (
     <div
-      style={
+      style = {
         currentComponentIndex === 2
           ? { height: "0vh", width: "0%" }
           : { height: "100vh", width: "100%", overflow: "hidden", position: "absolute", background: "#ffffff" }

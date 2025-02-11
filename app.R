@@ -1,17 +1,16 @@
 library(shiny)
 library(esqlabs.ui)
-library(tidyverse)
 
 ui <- fluidPage(
   suppressWarnings({
     esqlabs.ui::intro_screen()
   }),
-  tableOutput("test")
+  textOutput("test")
 )
 
 server <- function(input, output, session) {
-  output$test <- renderTable({
-    mtcars
+  output$test <- renderText({
+    "mtcars"
   })
 }
 
